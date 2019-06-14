@@ -36,13 +36,13 @@ export const actions = {
           const product = getProductDetail(getState(), productId);
           const quantity = getState().purchase.quantity;
           const totalPrice = (product.currentPrice * quantity).toFixed(1);
-          const text1 = `${quantity}张 | 总价：${totalPrice}`;
+          const text1 = `${quantity} | Total：${totalPrice}`;
           const text2 = product.validityPeriod;
           const order = {
             title: `${product.shop}:${product.product}`,
             orderPicUrl: product.picture,
-            channel: '团购',
-            statusText: '待消费',
+            channel: 'Group buying',
+            statusText: 'Usable',
             text: [text1, text2],
             type: AVAILABLE_TYPE
           }
